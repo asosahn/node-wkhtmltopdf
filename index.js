@@ -139,7 +139,7 @@ function wkhtmltopdf(input, options, callback) {
           return true;
         }
       }
-      errObj = new Error(err.join('\n'));
+      // errObj = new Error(err.join('\n'));
     } else if (err) {
       errObj =  new Error(err);
     }
@@ -152,9 +152,9 @@ function wkhtmltopdf(input, options, callback) {
     }
 
     // if not, or there are listeners for errors, emit the error event
-    if (!callback || stream.listeners('error').length > 0) {
-      stream.emit('error', errObj);
-    }
+    // if (!callback || stream.listeners('error').length > 0) {
+    //   stream.emit('error', errObj);
+    // }
   }
 
   child.once('error', function(err) {
